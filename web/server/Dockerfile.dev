@@ -1,0 +1,9 @@
+FROM node:18-alpine
+
+RUN mkdir /app && \
+    chown -R node /app && \
+    npm i npm@latest -g
+
+ENV PATH /app/node_modules/.bin:$PATH
+
+WORKDIR /app
